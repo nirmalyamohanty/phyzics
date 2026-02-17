@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phyzics - Interactive Physics Learning</title>
+    <meta name="description" content="Master physics through interactive simulations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Premium Fonts: Playfair Display (Serif) for headers, Inter for body, JetBrains Mono for data -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Noise Grain Overlay for Texture -->
+    <div class="noise-overlay"></div>
+    <div class="vignette-overlay"></div>
+
+    <!-- Loading Screen -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="atom-spinner">
+            <img src="einstein_tesla.gif" alt="Loading..."
+                style="width: 200px; height: auto; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+        </div>
+        <div id="loading-text" class="loading-text">Initializing Physics Engine...</div>
+        <div class="loading-bar-container">
+            <div id="loading-progress" class="loading-progress"></div>
+        </div>
+    </div>
+
+    <!-- Floating Physicist Avatars (Subtle) -->
+    <div class="floating-avatars">
+        <div class="avatar avatar-1" title="Isaac Newton">
+            <img src="https://imgs.search.brave.com/IXoBv6WQQBD7dn_WJbFOeuDr4_u65cYlwMhuu6P2pk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTE0/NzQ5NTMzMi9waG90/by9pc2FhYy1uZXd0/b24tYS1wb3J0cmFp/dC1mcm9tLW9sZC1l/bmdsaXNoLW1vbmV5/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1IMjAyUWd3X0FG/dHV4b2k0THNQUXpO/SW9uZHFqVTJMYzFh/OGlpcWE5UWVZPQ"
+                alt="Isaac Newton">
+        </div>
+        <div class="avatar avatar-2" title="Albert Einstein">
+            <img src="https://imgs.search.brave.com/MASIEKqXxmpIhxkVX-PZJY4yt-D52SLjNTuTBNRPpbo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNTE3/NDIyODQ0L3Bob3Rv/L2EtY29sb3VyaXpl/ZC1wb3J0cmFpdC1v/Zi1nZXJtYW4tYm9y/bi1hbWVyaWNhbi1w/aHlzaWNpc3QtYWxi/ZXJ0LWVpbnN0ZWlu/LW9uLWhpcy1hcnJp/dmFsLWluLW5ldy5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/ZnFxUmJLa3pTNXdX/TnFRMmZURFlBQVln/TkRnTDlGaVNYSTAx/VWdSa0FlZz0"
+                alt="Albert Einstein">
+        </div>
+        <div class="avatar avatar-3" title="Physics Concept">
+            <img src="https://imgs.search.brave.com/b6le2qKDf6DKx9MvFYq1gmOG-iSG6FqboaDMUoBvnfU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2NkLzYy/LzBmL2NkNjIwZjY3/ZDYyNzc4ZTlmMWJm/ZTIwOTQwNWViNjU4/LmpwZw"
+                alt="Physics Art">
+        </div>
+    </div>
+
+
+
+    <div id="app-container" class="container">
+        <header class="header">
+            <h1 class="logo">
+                <img src="jimmy-neutron-atom.gif" alt="Neutron Logo" class="logo-img">
+                Phyzics
+            </h1>
+            <div class="header-actions">
+                <button id="randomBtn" class="btn btn-primary" onclick="getRandomFormula()">
+                    <span class="btn-icon">🎲</span> Explore Random Formula
+                </button>
+                <button id="listBtn" class="btn btn-secondary">
+                    <span class="btn-icon">📜</span> Select Formula
+                </button>
+            </div>
+        </header>
+
+        <!-- Formula List Modal -->
+        <div id="list-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Select a Formula</h3>
+                    <button id="closeModalBtn" class="close-btn">&times;</button>
+                </div>
+                <div id="formula-list" class="formula-list">
+                    <!-- Formulas populated by JS -->
+                </div>
+            </div>
+        </div>
+
+        <main class="main-content">
+            <div id="formula-content" class="formula-grid hidden">
+                <!-- Left Column: Info -->
+                <div class="info-column glass-effect">
+                    <div class="formula-header">
+                        <h2 id="formula-name" class="formula-name">Formula Name</h2>
+                        <span id="formula-category" class="badge">Category</span>
+                    </div>
+
+                    <div class="content-block">
+                        <div class="concept-header">
+                            <h3 class="section-title">Concept</h3>
+                        </div>
+                        <p id="explanation" class="explanation-text"></p>
+                    </div>
+
+                    <div class="content-block">
+                        <h3 class="section-title">Equation</h3>
+                        <div class="equation-container">
+                            <div id="equation" class="equation"></div>
+                        </div>
+                    </div>
+
+                    <div class="content-block">
+                        <h3 class="section-title">Real World Example</h3>
+                        <p id="example" class="example-text"></p>
+                    </div>
+                </div>
+
+                <!-- Right Column: Simulation -->
+                <div class="simulation-column glass-effect">
+                    <h3 class="section-title">Interactive Simulation</h3>
+                    <div class="canvas-wrapper">
+                        <canvas id="simulationCanvas"></canvas>
+
+                        <div class="simulation-overlay-controls">
+                            <button id="playPauseBtn" class="control-btn" title="Play/Pause">
+                                <span id="playPauseIcon">▶</span>
+                            </button>
+                            <button id="resetBtn" class="control-btn" title="Reset">
+                                ↺
+                            </button>
+                        </div>
+                    </div>
+                    <p id="simulation-hint" class="simulation-hint">Click Play to start simulation</p>
+                    <div id="simulation-details" class="simulation-details">
+                        <h4 style="color: var(--accent); margin-bottom: 10px;">🎮 Simulation Guide</h4>
+                        <p style="font-size: 0.9em; line-height: 1.6; color: var(--text-secondary);">
+                            <strong>Interactive Controls:</strong><br>
+                            • <strong>Click & Drag</strong> - Interact with objects and particles<br>
+                            • <strong>Play/Pause</strong> - Control animation flow<br>
+                            • <strong>Reset</strong> - Return to initial state<br><br>
+
+                            <strong>Simulation Types:</strong><br>
+                            • <strong>Projectile</strong> - Watch parabolic trajectories in action<br>
+                            • <strong>Pendulum</strong> - See harmonic oscillation and period<br>
+                            • <strong>Wave</strong> - Visualize wave propagation and interference<br>
+                            • <strong>Spring</strong> - Observe elastic forces and oscillations<br>
+                            • <strong>Circular</strong> - Experience centripetal motion and rotation<br>
+                            • <strong>Freefall</strong> - Track accelerated motion under gravity<br>
+                            • <strong>Vector Forces</strong> - See force interactions (attraction/repulsion)<br>
+                            • <strong>Optics</strong> - Watch light rays bend and reflect<br>
+                            • <strong>Concept Visual</strong> - Themed animations (heat, atoms, fields)<br>
+                            • <strong>Graph</strong> - Plot mathematical relationships<br><br>
+
+                            <strong>💡 Tip:</strong> Each formula has a unique visual representation designed to
+                            illustrate its physical meaning!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Cute Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loader-content">
+            <div class="atom-spinner">
+                <img src="https://media.tenor.com/bPvlFKxllsAAAAAi/jimmy-neutron-atom.gif" alt="Loading Atom"
+                    class="loading-gif">
+            </div>
+            <p id="loading-text" class="loading-text">Consulting Isaac Newton...</p>
+            <div class="progress-container">
+                <div id="loading-progress" class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Credits -->
+    <div class="footer-credit">
+        Made with <span style="color: #f5576c;">❤</span> by Nirmalya
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
