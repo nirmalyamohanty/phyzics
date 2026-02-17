@@ -1,117 +1,112 @@
-<h1 align="center">⚛️ Phyzics — Interactive Physics Simulator</h1>
+<h1 align="center">⚛️ Phyzics</h1>
 
 <p align="center">
-<b>Visualize formulas. Run simulations. Build intuition.</b><br/>
-<i>Pure Vanilla JS • Real-time simulations • Concept-driven learning</i>
+<b>Interactive Physics. Real-Time Simulations. Zero Memorization.</b><br/>
+<i>Experiment → Visualize → Understand</i>
 </p>
 
 <p align="center">
 <a href="https://phyzics.vercel.app/" target="_blank">
-<img src="https://img.shields.io/badge/🚀 Live%20Demo-Open%20Phyzics-00C853?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/🚀 CLICK%20TO%20LAUNCH%20PHYzICS-Open%20Live%20Demo-ff0080?style=for-the-badge&logo=vercel&logoColor=white"/>
 </a>
 </p>
 
 <p align="center">
-<img src="https://img.shields.io/badge/Status-First%20Commit-blue?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Simulations-Active-purple?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Formulas-Dynamic-green?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/No%20Framework-VanillaJS-yellow?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/VanillaJS-No%20Frameworks-yellow?style=flat-square"/>
+<img src="https://img.shields.io/badge/Physics-Simulations-purple?style=flat-square"/>
+<img src="https://img.shields.io/badge/Formulas-Dynamic-green?style=flat-square"/>
+<img src="https://img.shields.io/badge/Status-First%20Commit-blue?style=flat-square"/>
 </p>
 
 ---
 
-## 🚀 What is Phyzics?
+## 🧪 Live Simulation Preview
 
-**Phyzics** is a browser-based interactive physics lab where users:
+<p align="center">
+<img src="einstein_tesla.gif" width="260"/>
+<img src="jimmy-neutron-atom.gif" width="260"/>
+</p>
 
-- Select a formula  
-- Adjust parameters  
-- Watch real-time simulations  
-- Understand concepts visually  
-
-No memorization — only experimentation.
+<p align="center">
+<a href="https://phyzics.vercel.app/" target="_blank">
+<img src="https://img.shields.io/badge/⚡ Try%20Projectile%20Simulation-Click%20Here-00C853?style=for-the-badge"/>
+</a>
+</p>
 
 ---
 
-## 🧪 Current Simulations
+## ✨ Why Phyzics?
 
 <div align="center">
 
-<img src="einstein_tesla.gif" width="280"/>
-<img src="jimmy-neutron-atom.gif" width="280"/>
+🧠 Learn by changing variables  
+📈 Watch graphs update instantly  
+🎯 Understand concepts visually  
+⚡ No reload • No frameworks • Pure physics  
 
 </div>
 
 ---
 
-## ✨ Features
+## 🔬 Current Simulations
 
-<details open>
-<summary><b>🔬 Core Engine</b></summary>
+<p align="center">
 
-- Dynamic formula loader (`formulas.js`)  
-- Category-based filtering (Mechanics, etc.)  
-- Real-time simulation switching  
-- Custom simulation flag support  
-- Concept → Equation → Example flow  
+<img src="https://img.shields.io/badge/Projectile-Motion-orange?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Simple-Pendulum-blue?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Spring-System-purple?style=for-the-badge"/>
 
-</details>
-
-<details>
-<summary><b>📈 Interactive Simulations</b></summary>
-
-- Projectile Motion  
-- Simple Pendulum  
-- Spring / Shock absorber system  
-- Extensible simulation architecture  
-
-</details>
-
-<details>
-<summary><b>🧠 Learning UX</b></summary>
-
-- Parameter-driven visualization  
-- Modular simulation types  
-- Instant updates (no reload)  
-- Clean physics-first UI  
-
-</details>
+</p>
 
 ---
 
-## 🧬 Formula System
+## 🧬 Formula Engine
 
-Physics concepts are defined as structured objects:
+<details>
+<summary><b>📦 Click to view formula structure</b></summary>
 
 ```js
 {
-  name: "Projectile Motion",
+  name: "Simple Pendulum",
   category: "Mechanics",
-  equation: "y = x tan(θ) - ...",
-  explanation: "Curved path under gravity",
-  example: "Basketball shot",
-  simulationType: "projectile",
+  equation: "T = 2π√(L/g)",
+  explanation: "Oscillation period",
+  example: "Grandfather clock",
+  simulationType: "pendulum",
   isCustom: true
 }
 ```
 
-✔️ Easily add new formulas  
-✔️ Plug into simulation engine  
-✔️ Auto-render in UI  
+✔️ Plug-and-play formulas  
+✔️ Auto UI rendering  
+✔️ Simulation binding  
+
+</details>
 
 ---
 
 ## 🛠️ Tech Stack
 
-```bash
-HTML5        → Layout
-CSS3         → Styling & animations
-Vanilla JS   → Simulation logic
-Canvas/SVG   → Rendering
-Python       → Simulation analysis (analyze_sims.py)
-```
+<p align="center">
 
-No frameworks. Lightweight and fast.
+<img src="https://img.shields.io/badge/HTML5-Structure-orange?style=flat-square"/>
+<img src="https://img.shields.io/badge/CSS3-Animations-blue?style=flat-square"/>
+<img src="https://img.shields.io/badge/JavaScript-Simulation%20Logic-yellow?style=flat-square"/>
+<img src="https://img.shields.io/badge/Canvas-SVG%20Rendering-green?style=flat-square"/>
+
+</p>
+
+---
+
+## 🧠 Learning Flow
+
+```mermaid
+flowchart LR
+A[Select Formula] --> B[Load Simulation]
+B --> C[Move Slider]
+C --> D[See Motion]
+D --> E[Concept Clear]
+```
 
 ---
 
@@ -126,35 +121,15 @@ phyzics/
 │── analyze_sims.py
 │── einstein_tesla.gif
 │── jimmy-neutron-atom.gif
-│── README.md
 ```
 
 ---
 
-## 🧠 Learning Flow
+## 🚀 Run Locally
 
-```mermaid
-flowchart LR
-A[Select Formula] --> B[Load Simulation]
-B --> C[Adjust Parameters]
-C --> D[Visual Update]
-D --> E[Concept Clarity]
-```
-
----
-
-## 🎯 Supported Domains (First Commit)
-
-- Classical Mechanics  
-  - Projectile Motion  
-  - Simple Pendulum  
-  - Spring Systems  
-
-More modules coming soon.
-
----
-
-## 🚀 Getting Started
+<p align="center">
+<img src="https://img.shields.io/badge/Clone-Repository-black?style=for-the-badge"/>
+</p>
 
 ```bash
 git clone https://github.com/nirmalyamohanty/phyzics.git
@@ -162,8 +137,13 @@ cd phyzics
 open index.html
 ```
 
-Or use the live demo:  
-👉 https://phyzics.vercel.app/
+Or just:
+
+<p align="center">
+<a href="https://phyzics.vercel.app/" target="_blank">
+<img src="https://img.shields.io/badge/⚛️ Open%20Phyzics%20Lab%20Now-Click%20Me-ff0080?style=for-the-badge"/>
+</a>
+</p>
 
 ---
 
@@ -179,26 +159,22 @@ Or use the live demo:
 
 ---
 
-## 🧑‍💻 Author
+## 👨‍💻 Author
 
-<div align="center">
-
+<p align="center">
 <b>Nirmalya Kumar Mohanty</b><br/>
-CSE Student • Physics + Code Builder
-
-</div>
+Physics + Code • Building a browser physics lab 🔬
+</p>
 
 ---
 
-## ⭐ First Commit Notes
+## ⭐ First Commit
 
-- Formula engine initialized  
-- Modular simulation architecture  
-- Mechanics simulations added  
-- GIF visual assets integrated  
+✔️ Formula engine initialized  
+✔️ Modular simulation system  
+✔️ Mechanics simulations added  
+✔️ GIF visual previews integrated  
 
-<div align="center">
-
-<b>Building a browser-based physics lab 🔬</b>
-
-</div>
+<p align="center">
+<b>Click the demo. Play with physics. 🚀</b>
+</p>
