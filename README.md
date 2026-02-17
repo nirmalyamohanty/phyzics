@@ -2,7 +2,13 @@
 
 <p align="center">
 <b>Visualize formulas. Run simulations. Build intuition.</b><br/>
-<i>Pure Vanilla JS • Real-time graphs • Concept animations</i>
+<i>Pure Vanilla JS • Real-time simulations • Concept-driven learning</i>
+</p>
+
+<p align="center">
+<a href="https://phyzics.vercel.app/" target="_blank">
+<img src="https://img.shields.io/badge/🚀 Live%20Demo-Open%20Phyzics-00C853?style=for-the-badge"/>
+</a>
 </p>
 
 <p align="center">
@@ -16,11 +22,11 @@
 
 ## 🚀 What is Phyzics?
 
-**Phyzics** is an interactive physics learning platform where users:
+**Phyzics** is a browser-based interactive physics lab where users:
 
 - Select a formula  
-- Modify parameters  
-- Watch real-time simulations update  
+- Adjust parameters  
+- Watch real-time simulations  
 - Understand concepts visually  
 
 No memorization — only experimentation.
@@ -31,8 +37,8 @@ No memorization — only experimentation.
 
 <div align="center">
 
-<img src="einstein_tesla.gif" width="300"/>
-<img src="jimmy-neutron-atom.gif" width="300"/>
+<img src="einstein_tesla.gif" width="280"/>
+<img src="jimmy-neutron-atom.gif" width="280"/>
 
 </div>
 
@@ -47,7 +53,7 @@ No memorization — only experimentation.
 - Category-based filtering (Mechanics, etc.)  
 - Real-time simulation switching  
 - Custom simulation flag support  
-- Concept + equation + example view  
+- Concept → Equation → Example flow  
 
 </details>
 
@@ -64,10 +70,10 @@ No memorization — only experimentation.
 <details>
 <summary><b>🧠 Learning UX</b></summary>
 
-- Equation → Explanation → Example flow  
 - Parameter-driven visualization  
 - Modular simulation types  
 - Instant updates (no reload)  
+- Clean physics-first UI  
 
 </details>
 
@@ -75,7 +81,7 @@ No memorization — only experimentation.
 
 ## 🧬 Formula System
 
-Formulas are defined as structured objects:
+Physics concepts are defined as structured objects:
 
 ```js
 {
@@ -89,7 +95,7 @@ Formulas are defined as structured objects:
 }
 ```
 
-✔️ Easily add new physics concepts  
+✔️ Easily add new formulas  
 ✔️ Plug into simulation engine  
 ✔️ Auto-render in UI  
 
@@ -101,11 +107,11 @@ Formulas are defined as structured objects:
 HTML5        → Layout
 CSS3         → Styling & animations
 Vanilla JS   → Simulation logic
-Canvas/SVG   → Rendering engine
+Canvas/SVG   → Rendering
 Python       → Simulation analysis (analyze_sims.py)
 ```
 
-No frameworks. Lightweight. Fast.
+No frameworks. Lightweight and fast.
 
 ---
 
@@ -116,9 +122,9 @@ phyzics/
 │── index.html
 │── style.css
 │── script.js
-│── formulas.js          # Physics formula database
-│── analyze_sims.py      # Simulation analysis tool
-│── einstein_tesla.gif   # Visual asset
+│── formulas.js
+│── analyze_sims.py
+│── einstein_tesla.gif
 │── jimmy-neutron-atom.gif
 │── README.md
 ```
@@ -131,7 +137,7 @@ phyzics/
 flowchart LR
 A[Select Formula] --> B[Load Simulation]
 B --> C[Adjust Parameters]
-C --> D[Graph Updates]
+C --> D[Visual Update]
 D --> E[Concept Clarity]
 ```
 
@@ -156,13 +162,14 @@ cd phyzics
 open index.html
 ```
 
-No dependencies required.
+Or use the live demo:  
+👉 https://phyzics.vercel.app/
 
 ---
 
 ## 🔮 Roadmap
 
-- [ ] 40+ formulas  
+- [ ] 40+ interactive formulas  
 - [ ] Graph plotting engine  
 - [ ] Thermodynamics module  
 - [ ] Electromagnetism simulations  
