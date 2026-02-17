@@ -1,144 +1,111 @@
-<h1 align="center">⚛️ Phyzics — Interactive Physics Learning</h1>
+<h1 align="center">⚛️ Phyzics — Interactive Physics Simulator</h1>
 
 <p align="center">
-<b>Visualize • Experiment • Understand</b><br/>
-<i>Real-time physics simulations in your browser</i>
+<b>Visualize formulas. Run simulations. Build intuition.</b><br/>
+<i>Pure Vanilla JS • Real-time graphs • Concept animations</i>
 </p>
 
 <p align="center">
 <img src="https://img.shields.io/badge/Status-First%20Commit-blue?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/JavaScript-Vanilla-yellow?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Physics-Interactive-purple?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Learning-Visual-green?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Simulations-Active-purple?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Formulas-Dynamic-green?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/No%20Framework-VanillaJS-yellow?style=for-the-badge"/>
 </p>
 
 ---
 
+## 🚀 What is Phyzics?
+
+**Phyzics** is an interactive physics learning platform where users:
+
+- Select a formula  
+- Modify parameters  
+- Watch real-time simulations update  
+- Understand concepts visually  
+
+No memorization — only experimentation.
+
+---
+
+## 🧪 Current Simulations
+
 <div align="center">
 
-<h3>🚀 Master Physics Through Interaction</h3>
-
-<p>
-Phyzics turns formulas into <b>real-time visual simulations</b>.<br/>
-Change variables → Watch graphs update → Build intuition instantly.
-</p>
+<img src="einstein_tesla.gif" width="300"/>
+<img src="jimmy-neutron-atom.gif" width="300"/>
 
 </div>
 
 ---
 
-## ✨ Core Features
+## ✨ Features
 
 <details open>
-<summary><b>🎯 Click to expand features</b></summary>
+<summary><b>🔬 Core Engine</b></summary>
 
-<ul>
-<li>Real-time formula visualization</li>
-<li>Dynamic graphs & sliders</li>
-<li>Projectile motion simulation</li>
-<li>Snell’s law light refraction demo</li>
-<li>Thermodynamics parameter explorer</li>
-<li>Instant calculations (no reload)</li>
-<li>Pure Vanilla JS — no heavy frameworks</li>
-</ul>
+- Dynamic formula loader (`formulas.js`)  
+- Category-based filtering (Mechanics, etc.)  
+- Real-time simulation switching  
+- Custom simulation flag support  
+- Concept + equation + example view  
 
 </details>
 
----
-
-## 🧬 Physics Modules
-
 <details>
-<summary><b>📘 Classical Mechanics</b></summary>
+<summary><b>📈 Interactive Simulations</b></summary>
 
 - Projectile Motion  
-- Newton’s Laws  
-- Work & Energy  
+- Simple Pendulum  
+- Spring / Shock absorber system  
+- Extensible simulation architecture  
 
 </details>
 
 <details>
-<summary><b>🌊 Waves & Optics</b></summary>
+<summary><b>🧠 Learning UX</b></summary>
 
-- Snell’s Law  
-- Refraction & Reflection  
-- Interference (planned)  
-
-</details>
-
-<details>
-<summary><b>🔥 Thermodynamics</b></summary>
-
-- Heat transfer  
-- Gas laws  
-- Entropy visualization  
-
-</details>
-
-<details>
-<summary><b>⚡ Electromagnetism</b></summary>
-
-- Electric fields  
-- Basic circuits  
-- Potential difference  
-
-</details>
-
-<details>
-<summary><b>🧪 Modern Physics</b></summary>
-
-- Relativity basics  
-- Quantum concepts (planned)  
+- Equation → Explanation → Example flow  
+- Parameter-driven visualization  
+- Modular simulation types  
+- Instant updates (no reload)  
 
 </details>
 
 ---
 
-## 🧠 Learning Flow
+## 🧬 Formula System
 
-<div align="center">
+Formulas are defined as structured objects:
 
-<b>See → Change → Observe → Understand</b>
-
-</div>
-
-```mermaid
-flowchart LR
-A[Visual Simulation] --> B[Adjust Parameters]
-B --> C[Graph Updates]
-C --> D[Concept Clarity]
+```js
+{
+  name: "Projectile Motion",
+  category: "Mechanics",
+  equation: "y = x tan(θ) - ...",
+  explanation: "Curved path under gravity",
+  example: "Basketball shot",
+  simulationType: "projectile",
+  isCustom: true
+}
 ```
+
+✔️ Easily add new physics concepts  
+✔️ Plug into simulation engine  
+✔️ Auto-render in UI  
 
 ---
 
 ## 🛠️ Tech Stack
 
-<div align="center">
+```bash
+HTML5        → Layout
+CSS3         → Styling & animations
+Vanilla JS   → Simulation logic
+Canvas/SVG   → Rendering engine
+Python       → Simulation analysis (analyze_sims.py)
+```
 
-<table>
-<tr>
-<th>Layer</th>
-<th>Technology</th>
-</tr>
-<tr>
-<td>Structure</td>
-<td>HTML5</td>
-</tr>
-<tr>
-<td>Styling</td>
-<td>CSS3 (animations + responsive)</td>
-</tr>
-<tr>
-<td>Logic</td>
-<td>Vanilla JavaScript</td>
-</tr>
-<tr>
-<td>Rendering</td>
-<td>Canvas / SVG</td>
-</tr>
-</table>
-
-</div>
+No frameworks. Lightweight. Fast.
 
 ---
 
@@ -149,76 +116,82 @@ phyzics/
 │── index.html
 │── style.css
 │── script.js
-│── simulations/
-│    ├── projectile.js
-│    ├── snell.js
-│    ├── thermo.js
+│── formulas.js          # Physics formula database
+│── analyze_sims.py      # Simulation analysis tool
+│── einstein_tesla.gif   # Visual asset
+│── jimmy-neutron-atom.gif
 │── README.md
 ```
+
+---
+
+## 🧠 Learning Flow
+
+```mermaid
+flowchart LR
+A[Select Formula] --> B[Load Simulation]
+B --> C[Adjust Parameters]
+C --> D[Graph Updates]
+D --> E[Concept Clarity]
+```
+
+---
+
+## 🎯 Supported Domains (First Commit)
+
+- Classical Mechanics  
+  - Projectile Motion  
+  - Simple Pendulum  
+  - Spring Systems  
+
+More modules coming soon.
 
 ---
 
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/your-username/phyzics.git
+git clone https://github.com/nirmalyamohanty/phyzics.git
 cd phyzics
 open index.html
 ```
 
-No dependencies. Runs directly in the browser.
+No dependencies required.
 
 ---
 
 ## 🔮 Roadmap
 
-- [ ] 40+ interactive formulas  
-- [ ] Graph export (PNG/SVG)  
-- [ ] Dark / Light mode  
-- [ ] Mobile touch controls  
-- [ ] Quantum visualization engine  
+- [ ] 40+ formulas  
+- [ ] Graph plotting engine  
+- [ ] Thermodynamics module  
+- [ ] Electromagnetism simulations  
+- [ ] Quantum visualization  
 - [ ] Save experiment states  
+- [ ] Mobile touch controls  
 
 ---
 
-## 🎯 Target Users
-
-<div align="center">
-
-Physics students • JEE/NEET aspirants • Visual learners • Educators
-
-</div>
-
----
-
-## 📸 Preview
-
-<div align="center">
-
-<i>Interactive sliders → Live graphs → Concept animations</i><br/>
-Preview GIF coming soon…
-
-</div>
-
----
-
-## 👨‍💻 Author
+## 🧑‍💻 Author
 
 <div align="center">
 
 <b>Nirmalya Kumar Mohanty</b><br/>
-CSE Student • Physics + Code Enthusiast
+CSE Student • Physics + Code Builder
 
 </div>
 
 ---
 
-## ⭐ First Commit
+## ⭐ First Commit Notes
 
-Initial simulation engine, UI concept, and modular physics structure.
+- Formula engine initialized  
+- Modular simulation architecture  
+- Mechanics simulations added  
+- GIF visual assets integrated  
 
 <div align="center">
 
-<b>Building the future of visual physics learning 🚀</b>
+<b>Building a browser-based physics lab 🔬</b>
 
 </div>
