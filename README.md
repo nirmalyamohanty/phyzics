@@ -1,180 +1,182 @@
-<h1 align="center">⚛️ Phyzics</h1>
+<h1 align="center">⚛️ Phyzics — Interactive Physics Lab</h1>
 
 <p align="center">
-<b>Interactive Physics. Real-Time Simulations. Zero Memorization.</b><br/>
-<i>Experiment → Visualize → Understand</i>
+Master physics through real-time simulations, dynamic graphs, and visual intuition.<br>
+<b>No frameworks. No fluff. Just pure explorable physics.</b>
 </p>
 
 <p align="center">
-<a href="https://phyzics.vercel.app/" target="_blank">
-<img src="https://img.shields.io/badge/🚀 CLICK%20TO%20LAUNCH%20PHYzICS-Open%20Live%20Demo-ff0080?style=for-the-badge&logo=vercel&logoColor=white"/>
-</a>
-</p>
-
-<p align="center">
-<img src="https://img.shields.io/badge/VanillaJS-No%20Frameworks-yellow?style=flat-square"/>
-<img src="https://img.shields.io/badge/Physics-Simulations-purple?style=flat-square"/>
-<img src="https://img.shields.io/badge/Formulas-Dynamic-green?style=flat-square"/>
-<img src="https://img.shields.io/badge/Status-First%20Commit-blue?style=flat-square"/>
-</p>
-
----
-
-## 🧪 Live Simulation Preview
-
-<p align="center">
-<img src="einstein_tesla.gif" width="260"/>
-<img src="jimmy-neutron-atom.gif" width="260"/>
-</p>
-
-<p align="center">
-<a href="https://phyzics.vercel.app/" target="_blank">
-<img src="https://img.shields.io/badge/⚡ Try%20Projectile%20Simulation-Click%20Here-00C853?style=for-the-badge"/>
+<a href="https://phyzics.vercel.app/">
+<button style="
+padding:12px 24px;
+font-size:16px;
+border-radius:30px;
+border:none;
+background:linear-gradient(90deg,#00f7ff,#ff00c8);
+color:white;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 0 18px #00f7ff;
+">
+🚀 Launch Phyzics
+</button>
 </a>
 </p>
 
 ---
 
-## ✨ Why Phyzics?
+<h2 align="center">🪀 Live Simple Pendulum</h2>
 
 <div align="center">
 
-🧠 Learn by changing variables  
-📈 Watch graphs update instantly  
-🎯 Understand concepts visually  
-⚡ No reload • No frameworks • Pure physics  
+<svg width="260" height="260" viewBox="0 0 200 220">
+  <circle cx="100" cy="20" r="4" fill="#ffffff"/>
+  <line id="string" x1="100" y1="20" x2="100" y2="140"
+        stroke="#00f7ff" stroke-width="2"/>
+  <circle id="bob" cx="100" cy="140" r="12" fill="#ff00c8"/>
+</svg>
+
+<br/>
+
+<button onclick="startPendulum()" 
+style="
+margin-top:10px;
+padding:8px 18px;
+border:none;
+border-radius:20px;
+background:linear-gradient(90deg,#00f7ff,#ff00c8);
+color:white;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 0 12px #00f7ff;
+">
+▶ Start Simulation
+</button>
 
 </div>
 
----
+<script>
+let angle = 0.6;
+let velocity = 0;
+const gravity = 0.01;
+const length = 120;
+let running = false;
 
-## 🔬 Current Simulations
-
-<p align="center">
-
-<img src="https://img.shields.io/badge/Projectile-Motion-orange?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Simple-Pendulum-blue?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Spring-System-purple?style=for-the-badge"/>
-
-</p>
-
----
-
-## 🧬 Formula Engine
-
-<details>
-<summary><b>📦 Click to view formula structure</b></summary>
-
-```js
-{
-  name: "Simple Pendulum",
-  category: "Mechanics",
-  equation: "T = 2π√(L/g)",
-  explanation: "Oscillation period",
-  example: "Grandfather clock",
-  simulationType: "pendulum",
-  isCustom: true
+function startPendulum(){
+  if(!running){
+    running = true;
+    requestAnimationFrame(animate);
+  }
 }
-```
 
-✔️ Plug-and-play formulas  
-✔️ Auto UI rendering  
-✔️ Simulation binding  
+function animate(){
+  if(!running) return;
 
-</details>
+  const acceleration = -gravity * Math.sin(angle);
+  velocity += acceleration;
+  angle += velocity;
+  velocity *= 0.999;
+
+  const originX = 100;
+  const originY = 20;
+
+  const bobX = originX + length * Math.sin(angle);
+  const bobY = originY + length * Math.cos(angle);
+
+  document.getElementById("bob").setAttribute("cx", bobX);
+  document.getElementById("bob").setAttribute("cy", bobY);
+  document.getElementById("string").setAttribute("x2", bobX);
+  document.getElementById("string").setAttribute("y2", bobY);
+
+  requestAnimationFrame(animate);
+}
+</script>
 
 ---
 
-## 🛠️ Tech Stack
+<h2>✨ Features</h2>
 
-<p align="center">
+<ul>
+<li>📈 Real-time physics simulations</li>
+<li>🧮 40+ formulas across mechanics, thermodynamics, EM, optics</li>
+<li>🎯 Interactive visual learning (not static theory)</li>
+<li>⚡ Instant calculations in browser</li>
+<li>🧠 Concept-first approach</li>
+<li>🪶 Built with pure Vanilla JavaScript</li>
+</ul>
 
-<img src="https://img.shields.io/badge/HTML5-Structure-orange?style=flat-square"/>
-<img src="https://img.shields.io/badge/CSS3-Animations-blue?style=flat-square"/>
-<img src="https://img.shields.io/badge/JavaScript-Simulation%20Logic-yellow?style=flat-square"/>
-<img src="https://img.shields.io/badge/Canvas-SVG%20Rendering-green?style=flat-square"/>
+---
 
+<h2>🧪 Topics Covered</h2>
+
+<table align="center">
+<tr>
+<td>⚙️ Classical Mechanics</td>
+<td>🌡️ Thermodynamics</td>
+</tr>
+<tr>
+<td>⚡ Electromagnetism</td>
+<td>🔭 Optics & Waves</td>
+</tr>
+<tr>
+<td>🚀 Projectile Motion</td>
+<td>🌊 SHM & Oscillations</td>
+</tr>
+</table>
+
+---
+
+<h2>🖥️ Tech Stack</h2>
+
+<p>
+HTML5 • CSS3 • Vanilla JavaScript<br>
+SVG for simulations • Canvas (planned) • No frameworks
 </p>
 
 ---
 
-## 🧠 Learning Flow
-
-```mermaid
-flowchart LR
-A[Select Formula] --> B[Load Simulation]
-B --> C[Move Slider]
-C --> D[See Motion]
-D --> E[Concept Clear]
-```
-
----
-
-## 📂 Project Structure
-
-```bash
-phyzics/
-│── index.html
-│── style.css
-│── script.js
-│── formulas.js
-│── analyze_sims.py
-│── einstein_tesla.gif
-│── jimmy-neutron-atom.gif
-```
-
----
-
-## 🚀 Run Locally
+<h2>📸 Preview</h2>
 
 <p align="center">
-<img src="https://img.shields.io/badge/Clone-Repository-black?style=for-the-badge"/>
+<i>Turn your browser into a physics laboratory.</i>
 </p>
 
-```bash
-git clone https://github.com/nirmalyamohanty/phyzics.git
+---
+
+<h2>🚀 Getting Started</h2>
+
+<pre>
+git clone https://github.com/your-username/phyzics
 cd phyzics
 open index.html
-```
+</pre>
 
-Or just:
+Or use the live site 👉 <b>https://phyzics.vercel.app/</b>
 
-<p align="center">
-<a href="https://phyzics.vercel.app/" target="_blank">
-<img src="https://img.shields.io/badge/⚛️ Open%20Phyzics%20Lab%20Now-Click%20Me-ff0080?style=for-the-badge"/>
-</a>
+---
+
+<h2>🧠 Philosophy</h2>
+
+<p>
+Phyzics is built on one idea:<br>
+<b>“If you can see it, you can understand it.”</b><br><br>
+Every formula should move.  
+Every concept should react.  
+Physics should be experienced — not memorized.
 </p>
 
 ---
 
-## 🔮 Roadmap
+<h2>📌 Roadmap</h2>
 
-- [ ] 40+ interactive formulas  
-- [ ] Graph plotting engine  
-- [ ] Thermodynamics module  
-- [ ] Electromagnetism simulations  
-- [ ] Quantum visualization  
-- [ ] Save experiment states  
-- [ ] Mobile touch controls  
-
----
-
-## 👨‍💻 Author
-
-<p align="center">
-<b>Nirmalya Kumar Mohanty</b><br/>
-Physics + Code • Building a browser physics lab 🔬
-</p>
+<ul>
+<li>📊 Graph plotting engine</li>
+<li>🎛️ Parameter sliders (mass, gravity, length)</li>
+<li>🔬 Circuit simulator</li>
+<li>🌌 Quantum visualization</li>
+</ul>
 
 ---
 
-## ⭐ First Commit
-
-✔️ Formula engine initialized  
-✔️ Modular simulation system  
-✔️ Mechanics simulations added  
-✔️ GIF visual previews integrated  
-
-<p align="center">
-<b>Click the demo. Play with physics. 🚀</b>
-</p>
+<h2 align="center">⭐ If you like this project, star the repo</h2>
+<p align="center">Built with curiosity by a physics lover.</p>
