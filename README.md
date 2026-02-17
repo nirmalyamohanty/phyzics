@@ -69,3 +69,60 @@ Instead of memorizing equations, users can **see physics in action** — from pr
 
 ## 📁 Project Structure
 
+phyzics/
+│── index.html
+│── style.css
+│── script.js
+│── formulas.js
+│── analyze_sims.py
+│── assets/
+
+---
+
+## 🎯 Learning Goal
+
+Phyzics helps students:
+
+✅ Understand concepts visually  
+✅ Connect formulas to real-world motion  
+✅ Build intuition for physics  
+✅ Learn faster through interaction  
+
+---
+
+## 🚀 Live Project
+
+👉 https://phyzics.vercel.app/
+
+---
+
+## 🔮 Future Roadmap
+
+- Adjustable simulation parameters  
+- Motion graphs (x-t, v-t, a-t)  
+- Quantum wave visualizer  
+- Dark/Light mode  
+- Mobile optimization  
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository  
+2. Add a new simulation or formula  
+3. Submit a pull request  
+
+---
+
+## 👨‍💻 Author
+
+**Nirmalya Kumar Mohanty**  
+CSE Student • Physics + Code Enthusiast  
+
+---
+
+<p align="center">
+⚛️ Built with curiosity, code, and a love for physics.
+</p>
